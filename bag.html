@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собери сумочку - 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">8 Марта</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cars.html">Марка машины</a></li>
+                <li><a href="celebrity.html">Знаменитость</a></li>
+                <li><a href="basic.html">Базовый</a></li>
+                <li><a href="bag.html" class="active">Сумочка</a></li>
+                <li><a href="ten.html">10/10</a></li>
+                <li><a href="song.html">Песня</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contest-page">
+        <div class="contest-container">
+            <div class="contest-header fade-in">
+                <h1>Собери сумочку</h1>
+                <p>На столе лежат разные предметы. Участники должны запомнить все предметы за 30 секунд, затем предметы закрываются и нужно назвать как можно больше вещей!</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Main Game Card -->
+            <div class="task-card">
+    <div class="task-number">1</div>
+    <div class="task-content">
+        <h3>Собери сумочку</h3>
+
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+            На столе перед участниками лежат различные предметы.
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+            Участникам даётся <strong>30 секунд</strong>, чтобы внимательно
+            посмотреть на предметы и постараться запомнить их.
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+            После этого предметы закрываются, и участники должны назвать
+            как можно больше предметов, которые они запомнили.
+        </p>
+
+        <p style="margin-bottom: 2rem;">
+            Побеждает тот, кто назовёт больше всего правильных предметов.
+        </p>
+
+        <div style="text-align:center;">
+            <button class="btn-answer" onclick="showResult()">Показать результат</button>
+        </div>
+    </div>
+
+    <div class="answer-section" id="answerSection">
+        <h4>Результат конкурса</h4>
+
+        <div class="answer-content">
+
+            <p style="font-size:1.1rem; margin-bottom:1rem;">
+                Всего на столе было <strong>15 предметов</strong>.
+            </p>
+
+            <div style="margin-top:1rem; padding:1rem; background: var(--gradient-main); border-radius:15px; color:white;">
+
+                <p><strong>Подсчёт результатов:</strong></p>
+
+                <p>15 — феноменальная память</p>
+                <p>10–14 — отличный результат</p>
+                <p>5–9 — хороший результат</p>
+                <p>1–4 — можно лучше</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="task-navigation">
+        <span></span>
+        <a href="ten.html" class="btn-next active" style="opacity:1; pointer-events:auto;">Следующий конкурс →</a>
+    </div>
+</div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью к празднику 8 Марта</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function hideItems() {
+            const grid = document.getElementById('itemsGrid');
+            const btn = document.getElementById('hideBtn');
+            const answer = document.getElementById('answerSection');
+
+            grid.style.filter = 'blur(20px)';
+            grid.style.pointerEvents = 'none';
+            btn.textContent = 'Показать ответ';
+            btn.onclick = function() {
+                answer.classList.add('visible');
+                grid.style.display = 'none';
+                this.disabled = true;
+                this.textContent = 'Ответ показан';
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай марку машины - 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">8 Марта</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cars.html" class="active">Марка машины</a></li>
+                <li><a href="celebrity.html">Знаменитость</a></li>
+                <li><a href="basic.html">Базовый</a></li>
+                <li><a href="bag.html">Сумочка</a></li>
+                <li><a href="ten.html">10/10</a></li>
+                <li><a href="song.html">Песня</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contest-page">
+        <div class="contest-container">
+            <div class="contest-header fade-in">
+                <h1>Угадай марку машины</h1>
+                <p>Посмотрите на фотографию автомобиля и угадайте его марку. Нажмите "Ответ" чтобы проверить себя!</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Car 1: BMW -->
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://pics.clipartpng.com/Black_BMW_M5_2013_Car_PNG_Clipart-101.png" alt="Машина 1" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>BMW (БМВ)</strong></p>
+                        <p>Bayerische Motoren Werke - немецкая автомобилестроительная компания, производящая легковые и спортивные автомобили премиум-класса.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task2" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Car 2: Mercedes -->
+            <div class="task-card" id="task2">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/rt-mercedes-benz-cpo-1-1531414981.jpg?crop=0.8145833333333334xw:1xh;center,top&resize=1200:*" alt="Машина 2" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>Mercedes-Benz (Мерседес-Бенц)</strong></p>
+                        <p>Немецкая автомобильная марка, входящая в состав концерна Mercedes-Benz Group. Один из самых узнаваемых брендов в мире.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task3" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Car 3: Lexus -->
+            <div class="task-card" id="task3">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://dealerimages.dealereprocess.com/image/upload/3700881" alt="Машина 3" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>Lexus (Лексус)</strong></p>
+                        <p>Японский автомобильный бренд премиум-класса, принадлежащий Toyota. Известен роскошью и надёжностью.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task4" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Car 4: Nissan -->
+            <div class="task-card" id="task4">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://di-uploads-pod35.dealerinspire.com/newtonnissanofgallatin/uploads/2022/06/2022-Nissan-Kicks-SR-Model-Left.jpg" alt="Машина 4" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>Nissan (Ниссан)</strong></p>
+                        <p>Японская автомобильная компания, один из крупнейших производителей автомобилей в мире.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task5" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Car 5: Suzuki -->
+            <div class="task-card" id="task5">
+                <div class="task-number">5</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://www.globalsuzuki.com/globalnews/2025/img/0130.jpg" alt="Машина 5" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>Suzuki (Сузуки)</strong></p>
+                        <p>Японская многопрофильная корпорация, производящая автомобили и мотоциклы. Известна компактными и надёжными автомобилями.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task6" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Car 6: Koenigsegg -->
+            <div class="task-card" id="task6">
+                <div class="task-number">6</div>
+                <div class="task-content">
+                    <h3>Какая это марка машины?</h3>
+                    <img src="https://koenigsegg-cdn-g7eehhd6f0ewcaff.z02.azurefd.net/drupal/styles/514x550/azure/2022-01/Jesko%20Track%20parked%20on%20a%20gravel%20path.jpg?h=10877377&itok=wfBvHgRh" alt="Машина 6" class="task-image">
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content">
+                        <p><strong>Koenigsegg (Кёнигсегг)</strong></p>
+                        <p>Шведский производитель гиперкаров премиум-класса. Одни из самых быстрых и дорогих автомобилей в мире!</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="celebrity.html" class="btn-next active">Следующий конкурс →</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью к празднику 8 Марта</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

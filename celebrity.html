@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нарисуй знаменитость - 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">8 Марта</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cars.html">Марка машины</a></li>
+                <li><a href="celebrity.html" class="active">Знаменитость</a></li>
+                <li><a href="basic.html">Базовый</a></li>
+                <li><a href="bag.html">Сумочка</a></li>
+                <li><a href="ten.html">10/10</a></li>
+                <li><a href="song.html">Песня</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contest-page">
+        <div class="contest-container">
+            <div class="contest-header fade-in">
+                <h1>Нарисуй знаменитость</h1>
+                <p>Один участник поворачивается спиной к экрану и рисует знаменитость по описанию одноклассников. Нажмите "Ответ" чтобы увидеть, кого нужно было нарисовать!</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Celebrity 1: Morgenshtern -->
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <h3>Опишите эту знаменитость (не называя имени)!</h3>
+                    <div class="celebrity-hint" style="background: var(--gradient-card); padding: 2rem; border-radius: 15px; text-align: center;">
+                        <p style="font-size: 1.2rem; color: var(--primary-dark);">Подсказка для описывающих:</p>
+                        <p style="font-size: 1rem; color: var(--text-light); margin-top: 1rem;">Известный российский рэпер, часто выпускает хиты, яркий образ, часто в новостях, колоритный стиль...</p>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content celebrity-card">
+                        <img src="Снимок экрана 2026-03-05 162457.png" alt="Арсен Маркарян" class="celebrity-image">
+                        <h3 style="font-size: 1.8rem; color: var(--primary);">Моргенштерн</h3>
+                        <p style="color: var(--text-light);">Алишер Тагирович Моргенштерн - российский рэпер, музыкальный продюсер и видеоблогер.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task2" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Celebrity 2: Arsen Markaryan -->
+            <div class="task-card" id="task2">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <h3>Опишите эту знаменитость (не называя имени)!</h3>
+                    <div class="celebrity-hint" style="background: var(--gradient-card); padding: 2rem; border-radius: 15px; text-align: center;">
+                        <p style="font-size: 1.2rem; color: var(--primary-dark);">Подсказка для описывающих:</p>
+                        <p style="font-size: 1rem; color: var(--text-light); margin-top: 1rem;">Известный блогер с бородой, мотивационный контент, философские мысли, яркая личность...</p>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content celebrity-card">
+                        <img src="Снимок экрана 2026-03-05 161905.png" alt="Арсен Маркарян" class="celebrity-image">
+                        <h3 style="font-size: 1.8rem; color: var(--primary);">Арсен Маркарян</h3>
+                        <p style="color: var(--text-light);">Известный блогер и мотивационный спикер.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task3" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Celebrity 3: Larisa Dolina -->
+            <div class="task-card" id="task3">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <h3>Опишите эту знаменитость (не называя имени)!</h3>
+                    <div class="celebrity-hint" style="background: var(--gradient-card); padding: 2rem; border-radius: 15px; text-align: center;">
+                        <p style="font-size: 1.2rem; color: var(--primary-dark);">Подсказка для описывающих:</p>
+                        <p style="font-size: 1rem; color: var(--text-light); margin-top: 1rem;">Известная российская певица, много хитов из 90-х, участвует в телешоу, мощный голос, народная артистка...</p>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content celebrity-card">
+                    <img src="Снимок экрана 2026-03-05 162629.png" alt="Лариса Долина" class="celebrity-image">
+                        <h3 style="font-size: 1.8rem; color: var(--primary);">Лариса Долина</h3>
+                        <p style="color: var(--text-light);">Лариса Александровна Долина - советская и российская эстрадная певица, Народная артистка России.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task4" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Celebrity 4: Anton Chigur -->
+            <div class="task-card" id="task4">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <h3>Опишите эту знаменитость (не называя имени)!</h3>
+                    <div class="celebrity-hint" style="background: var(--gradient-card); padding: 2rem; border-radius: 15px; text-align: center;">
+                        <p style="font-size: 1.2rem; color: var(--primary-dark);">Подсказка для описывающих:</p>
+                        <p style="font-size: 1rem; color: var(--text-light); margin-top: 1rem;">Персонаж из известного фильма, злодей, странная причёска, монетка, "Старикам тут не место"...</p>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content celebrity-card">
+                        <img src="Снимок экрана 2026-03-05 162818.png" alt="Антон Чигур" class="celebrity-image">
+                        <h3 style="font-size: 1.8rem; color: var(--primary);">Антон Чигур</h3>
+                        <p style="color: var(--text-light);">Антон Чигур - персонаж фильма "Старикам тут не место" (No Country for Old Men). Роль сыграл Хавьер Бардем, получивший за неё Оскар.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="basic.html" class="btn-next active">Следующий конкурс →</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью к празднику 8 Марта</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

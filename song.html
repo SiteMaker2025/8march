@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай песню - 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .song-player {
+            background: var(--gradient-card);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e84a5f 0%, #ff6b81 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 30px rgba(232, 74, 95, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(232, 74, 95, 0.4);
+        }
+
+        .play-button:active {
+            transform: scale(0.95);
+        }
+
+        .play-button svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-button.playing svg {
+            animation: pulse-icon 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .song-hint {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .song-waves {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 4px;
+            height: 40px;
+            margin-top: 1rem;
+        }
+
+        .wave-bar {
+            width: 6px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: height 0.1s ease;
+        }
+
+        .song-waves.playing .wave-bar {
+            animation: wave 0.5s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 35px; }
+        }
+
+        .song-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .song-artist {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .youtube-embed {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 15px;
+            margin: 1rem auto;
+            display: none;
+        }
+
+        .youtube-embed.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">8 Марта</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cars.html">Марка машины</a></li>
+                <li><a href="celebrity.html">Знаменитость</a></li>
+                <li><a href="basic.html">Базовый</a></li>
+                <li><a href="bag.html">Сумочка</a></li>
+                <li><a href="ten.html">10/10</a></li>
+                <li><a href="song.html" class="active">Песня</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contest-page">
+        <div class="contest-container">
+            <div class="contest-header fade-in">
+                <h1>Угадай песню</h1>
+                <p>Послушайте фрагмент песни и попробуйте угадать исполнителя и название! Нажмите на кнопку воспроизведения, чтобы услышать песню.</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Song 1: Татьяна Куртукова - Матушка земля -->
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <h3>Угадайте песню!</h3>
+                    <div class="song-player">
+                        <button class="play-button" onclick="toggleSong(this, 'song1')">
+                            <svg viewBox="0 0 24 24" class="play-icon">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                        </button>
+                        <p class="song-hint">Нажмите чтобы воспроизвести</p>
+                        <div class="song-waves" id="waves1">
+                            <div class="wave-bar" style="height: 15px;"></div>
+                            <div class="wave-bar" style="height: 25px;"></div>
+                            <div class="wave-bar" style="height: 20px;"></div>
+                            <div class="wave-bar" style="height: 30px;"></div>
+                            <div class="wave-bar" style="height: 18px;"></div>
+                        </div>
+                        <audio id="song1" src="Tatyana_Kurtukova_-_Matushka-zemlya_77861351.mp3"></audio>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content" style="text-align: center;">
+                        <p class="song-title">Матушка земля</p>
+                        <p class="song-artist">Татьяна Куртукова</p>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Красивая русская народная песня о любви к родной земле.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task2" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Song 2: SABI i MIA BOYKA - Базовый минимум -->
+            <div class="task-card" id="task2">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <h3>Угадайте песню!</h3>
+                    <div class="song-player">
+                        <button class="play-button" onclick="toggleSong(this, 'song2')">
+                            <svg viewBox="0 0 24 24" class="play-icon">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                        </button>
+                        <p class="song-hint">Нажмите чтобы воспроизвести</p>
+                        <div class="song-waves" id="waves2">
+                            <div class="wave-bar" style="height: 15px;"></div>
+                            <div class="wave-bar" style="height: 25px;"></div>
+                            <div class="wave-bar" style="height: 20px;"></div>
+                            <div class="wave-bar" style="height: 30px;"></div>
+                            <div class="wave-bar" style="height: 18px;"></div>
+                        </div>
+                        <audio id="song2" src="SABI_MIA_BOYKA_-_Bazovyjj_minimum_79356027.mp3"></audio>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content" style="text-align: center;">
+                        <p class="song-title">Базовый минимум</p>
+                        <p class="song-artist">SABI i MIA BOYKA</p>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Популярный хит о стандартах и базовых потребностях.</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task3" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Song 3: Jazzdauren - Дарите женщинам цветы -->
+            <div class="task-card" id="task3">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <h3>Угадайте песню!</h3>
+                    <div class="song-player">
+                        <button class="play-button" onclick="toggleSong(this, 'song3')">
+                            <svg viewBox="0 0 24 24" class="play-icon">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                        </button>
+                        <p class="song-hint">Нажмите чтобы воспроизвести</p>
+                        <div class="song-waves" id="waves3">
+                            <div class="wave-bar" style="height: 15px;"></div>
+                            <div class="wave-bar" style="height: 25px;"></div>
+                            <div class="wave-bar" style="height: 20px;"></div>
+                            <div class="wave-bar" style="height: 30px;"></div>
+                            <div class="wave-bar" style="height: 18px;"></div>
+                        </div>
+                        <audio id="song3" src="Jazzdauren_-_Darite_ZHenshhinam_Cvety_77580693.mp3"></audio>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content" style="text-align: center;">
+                        <p class="song-title">Дарите женщинам цветы</p>
+                        <p class="song-artist">Jazzdauren</p>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Прекрасная песня о том, как важно дарить цветы женщинам!</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task4" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Song 4: Gazan - Мам я хочу быть как Газан -->
+            <div class="task-card" id="task4">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <h3>Угадайте песню!</h3>
+                    <div class="song-player">
+                        <button class="play-button" onclick="toggleSong(this, 'song4')">
+                            <svg viewBox="0 0 24 24" class="play-icon">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                        </button>
+                        <p class="song-hint">Нажмите чтобы воспроизвести</p>
+                        <div class="song-waves" id="waves4">
+                            <div class="wave-bar" style="height: 15px;"></div>
+                            <div class="wave-bar" style="height: 25px;"></div>
+                            <div class="wave-bar" style="height: 20px;"></div>
+                            <div class="wave-bar" style="height: 30px;"></div>
+                            <div class="wave-bar" style="height: 18px;"></div>
+                        </div>
+                        <audio id="song4" src="Gazan_Mam_ya_hochu_byt_kak_Gazan.mp3"></audio>
+                    </div>
+                    <button class="btn-answer">Показать ответ</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Ответ:</h4>
+                    <div class="answer-content" style="text-align: center;">
+                        <p class="song-title">Мам, я хочу быть как Газан</p>
+                        <p class="song-artist">Gazan</p>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Популярный трек от Gazan!</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="index.html" class="btn-next active">Вернуться на главную →</a>
+                </div>
+            </div>
+
+            <!-- Final Card -->
+            <div class="task-card" style="background: var(--gradient-main); text-align: center;">
+                <div style="padding: 2rem;">
+                    <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Поздравляем!</h2>
+                    <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem;">Вы прошли все конкурсы! С праздником 8 Марта!</p>
+                    <div style="font-size: 4rem;">🌷🎉🌹</div>
+                    <a href="index.html" style="display: inline-block; margin-top: 2rem; background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">На главную страницу</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью к празднику 8 Марта</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let currentlyPlaying = null;
+        let currentAudio = null;
+let currentButton = null;
+let currentWaves = null;
+
+function toggleSong(button, songId) {
+
+    const audio = document.getElementById(songId);
+    const waves = document.getElementById('waves' + songId.replace('song', ''));
+
+    // если играет другая песня — остановить её
+    if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+
+        if (currentButton) {
+            currentButton.classList.remove("playing");
+            currentButton.innerHTML =
+            '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+        }
+
+        if (currentWaves) {
+            currentWaves.classList.remove("playing");
+        }
+    }
+
+    if (audio.paused) {
+
+        audio.play();
+
+        button.classList.add("playing");
+        waves.classList.add("playing");
+
+        button.innerHTML =
+        '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="white"/><rect x="14" y="4" width="4" height="16" fill="white"/></svg>';
+
+        currentAudio = audio;
+        currentButton = button;
+        currentWaves = waves;
+
+    } else {
+
+        audio.pause();
+
+        button.classList.remove("playing");
+        waves.classList.remove("playing");
+
+        button.innerHTML =
+        '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+
+        currentAudio = null;
+    }
+}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Он 10/10, но он... - 8 Марта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">8 Марта</a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="cars.html">Марка машины</a></li>
+                <li><a href="celebrity.html">Знаменитость</a></li>
+                <li><a href="basic.html">Базовый</a></li>
+                <li><a href="bag.html">Сумочка</a></li>
+                <li><a href="ten.html" class="active">10/10</a></li>
+                <li><a href="song.html">Песня</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contest-page">
+        <div class="contest-container">
+            <div class="contest-header fade-in">
+                <h1>Он 10/10, но он...</h1>
+                <p>Забавный конкурс! Представьте идеального человека, но с одной маленькой особенностью. Обсудите в классе - это ред флаг или нет?</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Case 1 -->
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <h3>Он 10/10, но он...</h3>
+                    <div style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: 20px; text-align: center; margin: 1.5rem 0;">
+                        <p style="font-size: 1.5rem; color: var(--primary-dark); font-weight: 600;">...отвечает на сообщения через 3 дня</p>
+                    </div>
+                    <button class="btn-answer">Показать обсуждение</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Для обсуждения:</h4>
+                    <div class="answer-content">
+                        <p><strong>Аргументы "За":</strong> Может быть очень занятым человеком, не привязан к телефону, живёт реальной жизнью.</p>
+                        <p style="margin-top: 1rem;"><strong>Аргументы "Против":</strong> Неуважение к собеседнику, отсутствие интереса, современные технологии позволяют отвечать быстрее.</p>
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Голосование: Ред флаг или нет?</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task2" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="task-card" id="task2">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <h3>Он 10/10, но он...</h3>
+                    <div style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: 20px; text-align: center; margin: 1.5rem 0;">
+                        <p style="font-size: 1.5rem; color: var(--primary-dark); font-weight: 600;">...ест пиццу с ананасами</p>
+                    </div>
+                    <button class="btn-answer">Показать обсуждение</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Для обсуждения:</h4>
+                    <div class="answer-content">
+                        <p><strong>Аргументы "За":</strong> У каждого свои вкусы, это вкусно (для многих), это классика гавайской пиццы!</p>
+                        <p style="margin-top: 1rem;"><strong>Аргументы "Против":</strong> Это преступление против итальянской кухни, фрукты на пицце - это странно!</p>
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Голосование: Ред флаг или нет?</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task3" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="task-card" id="task3">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <h3>Он 10/10, но он...</h3>
+                    <div style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: 20px; text-align: center; margin: 1.5rem 0;">
+                        <p style="font-size: 1.5rem; color: var(--primary-dark); font-weight: 600;">...не смотрел ни одного фильма Гарри Поттера</p>
+                    </div>
+                    <button class="btn-answer">Показать обсуждение</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Для обсуждения:</h4>
+                    <div class="answer-content">
+                        <p><strong>Аргументы "За":</strong> Не все любят фэнтези, может предпочитать книги, у каждого свои интересы.</p>
+                        <p style="margin-top: 1rem;"><strong>Аргументы "Против":</strong> Это культурный феномен! Как можно пропустить такую классику?</p>
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Голосование: Ред флаг или нет?</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task4" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Case 4 -->
+            <div class="task-card" id="task4">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <h3>Он 10/10, но он...</h3>
+                    <div style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: 20px; text-align: center; margin: 1.5rem 0;">
+                        <p style="font-size: 1.5rem; color: var(--primary-dark); font-weight: 600;">...спит с 10 подушками на кровати</p>
+                    </div>
+                    <button class="btn-answer">Показать обсуждение</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Для обсуждения:</h4>
+                    <div class="answer-content">
+                        <p><strong>Аргументы "За":</strong> Любит комфорт и уют, возможно проблемы со здоровьем, эстетика важна!</p>
+                        <p style="margin-top: 1rem;"><strong>Аргументы "Против":</strong> Где спать-то? Куда их девать каждую ночь? Аллергия на пыль обеспечена!</p>
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Голосование: Ред флаг или нет?</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="#task5" class="btn-next">Следующий вопрос →</a>
+                </div>
+            </div>
+
+            <!-- Case 5 -->
+            <div class="task-card" id="task5">
+                <div class="task-number">5</div>
+                <div class="task-content">
+                    <h3>Он 10/10, но он...</h3>
+                    <div style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: 20px; text-align: center; margin: 1.5rem 0;">
+                        <p style="font-size: 1.5rem; color: var(--primary-dark); font-weight: 600;">...записывает голосовые сообщения по 5 минут</p>
+                    </div>
+                    <button class="btn-answer">Показать обсуждение</button>
+                </div>
+                <div class="answer-section">
+                    <h4>Для обсуждения:</h4>
+                    <div class="answer-content">
+                        <p><strong>Аргументы "За":</strong> Это более личный способ общения, экономит время на печатание, слышно эмоции.</p>
+                        <p style="margin-top: 1rem;"><strong>Аргументы "Против":</strong> Невозможно слушать в общественных местах, долго, иногда нужно просто короткий ответ!</p>
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Голосование: Ред флаг или нет?</p>
+                    </div>
+                </div>
+                <div class="task-navigation">
+                    <span></span>
+                    <a href="song.html" class="btn-next active">Следующий конкурс →</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью к празднику 8 Марта</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
